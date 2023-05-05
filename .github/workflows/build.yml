@@ -15,9 +15,5 @@ jobs:
 
       - name: Build and test
         run: |
-          git submodule update --init --recursive
           docker build -t my-image .
           docker run my-image
-
-     
-        

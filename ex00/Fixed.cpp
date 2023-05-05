@@ -6,16 +6,16 @@
 /*   By: jgo <jgo@student.42seoul.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 15:24:02 by jgo               #+#    #+#             */
-/*   Updated: 2023/04/29 18:35:57 by jgo              ###   ########.fr       */
+/*   Updated: 2023/05/05 14:20:02 by jgo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 
-const int Fixed::_fractionalBits = 8;
+const int Fixed::kFractionalBits = 8;
 
-Fixed::Fixed() : val(0) {
+Fixed::Fixed() : fixed_point_(0) {
 	std::cout << DFLT_CTOR << std::endl;
 }
 
@@ -24,21 +24,23 @@ Fixed::Fixed(const Fixed& inst) {
 	*this = inst;
 }
 
-Fixed::~Fixed() {}
+Fixed::~Fixed() {
+	std::cout << DTOR << std::endl;
+}
 
 Fixed& Fixed::operator=(const Fixed& inst) {
 	std::cout << CPY_ASGMT_OP_CALL << std::endl;
 	if (this != &inst)
-		this->val = inst.getRawBits();
+		this->fixed_point_ = inst.getRawBits();
 	return (*this);
 }
 
 int Fixed::getRawBits(void) const {
-	std::cout << "getRawBits" << MEMBER_FUNC_CALL << std::endl;
-	return (this->val);
+	std::cout << "getRawBits " << MEMBER_FUNC_CALL << std::endl;
+	return (this->fixed_point_);
 }
 
 void Fixed::setRawBits(int const raw) {
 	std::cout << "setRawBits" << MEMBER_FUNC_CALL << std::endl;
-	this->val = raw;
+	this->fixed_point_ = raw;
 }

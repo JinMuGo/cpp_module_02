@@ -6,16 +6,16 @@
 #    By: jgo <jgo@student.42seoul.fr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 14:02:20 by jgo               #+#    #+#              #
-#    Updated: 2023/04/22 11:39:15 by jgo              ###   ########.fr        #
+#    Updated: 2023/05/06 16:48:57 by jgo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.DEFAULT_ON_ERROR:
 .DEFAULT_GOAL := all
 
 PROJECT_NAME := cpp_module_00
-STD := c++98 
-CXXFLAGS := -std=$(STD) -Wall -Wextra -Werror -MMD -MP
+STANDARD := c++98 
+CXXFLAGS := -std=$(STANDARD) -Wall -Wextra -Werror -MMD -MP
+CPPFLAGS := -I .
 
 ifndef DSTDIR
 	DSTDIR := $(abspath ../)
@@ -40,6 +40,7 @@ ifdef ADDR
 	CXXFLAGS += -fsanitize=address
 endif
 
+# data race
 ifdef RACE
 	CXXFLAGS := -fsanitize=thread -MMD -MP -g3
 	LDFLAGS += -fsanitize=thread -g3

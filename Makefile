@@ -6,14 +6,14 @@
 #    By: jgo <jgo@student.42seoul.fr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/23 14:05:59 by jgo               #+#    #+#              #
-#    Updated: 2023/05/10 16:32:04 by jgo              ###   ########.fr        #
+#    Updated: 2023/05/10 19:30:20 by jgo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include ./makeConfig/Rules.mk
 include ./makeConfig/Color_rules.mk
 
-PROJECT_NAME := cpp_module_01
+PROJECT_NAME := cpp_module_02
 
 DIRS := ex00 ex01 ex02 ex03
 

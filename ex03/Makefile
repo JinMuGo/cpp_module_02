@@ -5,27 +5,23 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jgo <jgo@student.42seoul.fr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/23 14:05:59 by jgo               #+#    #+#              #
-#    Updated: 2023/05/10 16:32:04 by jgo              ###   ########.fr        #
+#    Created: 2023/04/07 19:34:14 by jgo               #+#    #+#              #
+#    Updated: 2023/05/10 15:43:52 by jgo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-include ./makeConfig/Rules.mk
-include ./makeConfig/Color_rules.mk
+include ../makeConfig/Rules.mk
+include ../makeConfig/Color_rules.mk
 
-PROJECT_NAME := cpp_module_01
+SRCS :=	main.cpp \
+		Fixed.cpp \
+		Point.cpp \
+		bsp.cpp
 
-DIRS := ex00 ex01 ex02 ex03
+NAME := BSP
 
-$(DIRS):
-	$(MAKE) -C $@
+OBJS := $(SRCS:.cpp=.o)
+DEPS := $(SRCS:.cpp=.d)
+-include $(DEPS)
 
-all bonus: 
-	$(Q)$(call color_printf,$(YELLOW),$(PROJECT_NAME),🎯 Start compiling)
-	$(MAKE) $(DIRS)
-	$(Q)$(call color_printf,$(GREEN),$(PROJECT_NAME),✨ compiled!)
-	
-fclean clean re:
-	$(Q)$(foreach dir, $(DIRS), $(MAKE) -C $(dir) $@;)
-
-.PHONY: all clean fclean re bonus $(DIRS)
+include ../makeConfig/Recipes.mk

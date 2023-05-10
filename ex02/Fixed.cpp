@@ -6,7 +6,7 @@
 /*   By: jgo <jgo@student.42seoul.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 15:24:02 by jgo               #+#    #+#             */
-/*   Updated: 2023/05/07 13:03:58 by jgo              ###   ########.fr       */
+/*   Updated: 2023/05/10 21:30:45 by jgo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ Fixed Fixed::operator+(const Fixed& inst) const {
 	return (Fixed(toFloat() + inst.toFloat()));
 }
 Fixed Fixed::operator-(const Fixed& inst) const {
-	return (Fixed(toFloat() + inst.toFloat()));
+	return (Fixed(toFloat() - inst.toFloat()));
 }
 Fixed Fixed::operator*(const Fixed& inst) const {
 	return (Fixed(toFloat() * inst.toFloat()));

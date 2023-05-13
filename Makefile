@@ -6,12 +6,12 @@
 #    By: jgo <jgo@student.42seoul.fr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/23 14:05:59 by jgo               #+#    #+#              #
-#    Updated: 2023/05/10 19:30:20 by jgo              ###   ########.fr        #
+#    Updated: 2023/05/13 18:54:26 by jgo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-include ./makeConfig/Rules.mk
-include ./makeConfig/Color_rules.mk
+include ./make_config/Rules.mk
+include ./make_config/Color_rules.mk
 
 PROJECT_NAME := cpp_module_02
 

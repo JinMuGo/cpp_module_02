@@ -6,7 +6,7 @@
 /*   By: jgo <jgo@student.42seoul.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 15:24:02 by jgo               #+#    #+#             */
-/*   Updated: 2023/05/10 21:30:52 by jgo              ###   ########.fr       */
+/*   Updated: 2023/07/22 11:22:32 by jgo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ std::ostream& operator<<(std::ostream& os, const Fixed& inst) {
 }
 
 Fixed& Fixed::operator=(const Fixed& inst) {
-	std::cout << CPY_ASGMT_OP_CALL << std::endl;
+	std::cout << FIX_CPY_ASGMT_OP_CALL << std::endl;
 	if (this != &inst)
 		this->fixed_point_ = inst.getRawBits();
 	return (*this);
@@ -91,26 +91,26 @@ Fixed& Fixed::max(const Fixed& lhs, const Fixed& rhs) {
 };
 
 Fixed::Fixed() : fixed_point_(0) {
-	std::cout << DFLT_CTOR << std::endl;
+	std::cout << FIX_DFLT_CTOR << std::endl;
 }
 
 Fixed::Fixed(const Fixed& inst) {
-	std::cout << CPY_CTOR << std::endl;
+	std::cout << FIX_CPY_CTOR << std::endl;
 	*this = inst;
 }
 
 Fixed::Fixed(const int raw) : fixed_point_(raw << Fixed::kFractionalBits) {
-	std::cout << INT_CTOR << std::endl;
+	std::cout << FIX_INT_CTOR << std::endl;
 }
 
 Fixed::Fixed(const float raw)
 	: fixed_point_(
 		  static_cast<int>(roundf(raw * (1 << Fixed::kFractionalBits)))) {
-	std::cout << FLOAT_CTOR << std::endl;
+	std::cout << FIX_FLOAT_CTOR << std::endl;
 }
 
 Fixed::~Fixed() {
-	std::cout << DTOR << std::endl;
+	std::cout << FIX_DTOR << std::endl;
 }
 
 int Fixed::getRawBits(void) const {

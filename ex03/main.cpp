@@ -13,9 +13,8 @@
 #include "Point.hpp"
 
 static inline void print(const bool judge) {
-	std::cout << "the \"Point\" is "
-			  << (judge ? "\e[92m **in**" : "\e[91m **out**")
-			  << RESET " of triangle" << std::endl;
+	std::cout << "the \"Point\" is " << (judge ? "\e[92m **in**" : "\e[91m **out**") << RESET " of triangle"
+			  << std::endl;
 }
 
 int main(void) {

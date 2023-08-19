@@ -103,9 +103,7 @@ Fixed::Fixed(const int raw) : fixed_point_(raw << Fixed::kFractionalBits) {
 	std::cout << INT_CTOR << std::endl;
 }
 
-Fixed::Fixed(const float raw)
-	: fixed_point_(
-		  static_cast<int>(roundf(raw * (1 << Fixed::kFractionalBits)))) {
+Fixed::Fixed(const float raw) : fixed_point_(static_cast<int>(roundf(raw * (1 << Fixed::kFractionalBits)))) {
 	std::cout << FLOAT_CTOR << std::endl;
 }
 
@@ -122,8 +120,7 @@ void Fixed::setRawBits(int const raw) {
 }
 
 float Fixed::toFloat(void) const {
-	return ((static_cast<float>(this->fixed_point_) /
-			 (1 << Fixed::kFractionalBits)));
+	return ((static_cast<float>(this->fixed_point_) / (1 << Fixed::kFractionalBits)));
 }
 
 int Fixed::toInt(void) const {

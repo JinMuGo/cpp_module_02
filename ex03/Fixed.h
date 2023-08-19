@@ -25,6 +25,6 @@
 #define FIX_DTOR ORANGE "- Fixed: Destructor called" RESET
 #define FIX_INT_CTOR DARK_BLUE "Int constructor called" RESET
 #define FIX_FLOAT_CTOR DARK_CYAN "Float constructor called" RESET
-#define FIX_MEMBER_FUNC_CALL "- Fixed member function called" 
+#define FIX_MEMBER_FUNC_CALL "- Fixed member function called"
 
 #endif
